@@ -1,0 +1,27 @@
+﻿<local:NavigablePage
+    x:Class="MoviesDemo.UWP.Views.MovieDetailView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:MoviesDemo.UWP.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <Binding Path="MovieDetail" Source="{StaticResource ViewModelLocator}" />
+    </Page.DataContext>
+
+    <Page.Transitions>
+        <TransitionCollection>
+            <NavigationThemeTransition>
+                <DrillInNavigationTransitionInfo />
+            </NavigationThemeTransition>
+        </TransitionCollection>
+    </Page.Transitions>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <ContentControl Content="{Binding Movie}" ContentTemplate="{StaticResource DetailContentTemplate}" />
+        </ScrollViewer>
+    </Grid>
+</local:NavigablePage>
